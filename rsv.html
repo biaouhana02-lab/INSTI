@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Réservation de cabine</title>
+  <style>
+    .container {
+      max-width: 700px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      background: #003366;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00509e;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      background-color: #0d2c54;
+      border: none;
+      color: white
+    }
+
+    body {
+      background-color: white
+    }
+
+    .logo {
+      margin-right: 10px;
+    }
+
+    .titre {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .menu {
+      text-decoration: none;
+      align-items: center;
+      list-style: none;
+      display: flex;
+      gap: 7rem;
+      margin-bottom: 10px;
+      margin-top: 10px;
+
+
+    }
+
+    nav a {
+      text-decoration: none;
+      color: rgb(13, 44, 84);
+      border-right: 4px solid #0d2c54;
+      padding: 0 20px;
+    }
+
+    nav a :hover {
+      text-decoration: underline;
+    }
+
+    #liste {
+
+      background-color: none;
+    }
+
+    .overlay {
+      background-image: url(spacejoy-IH7wPsjwomc-unsplash.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      /* prend toute la largeur de la page */
+      height: 400px;
+      text-align: center;
+    }
+
+
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 40px 20px 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .footer-logo {
+      flex: 1;
+      text-align: center;
+      margin-left: 0rem;
+    }
+
+    .footer-logo img {
+      width: 80px;
+      margin-bottom: 10px;
+
+    }
+
+    .footer-links {
+      flex: 1;
+      text-align: center;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    .footer-links h4 {
+      margin-bottom: 10px;
+      color: #f1c40f;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li {
+      margin: 5px 0;
+
+    }
+
+    .footer-links ul li a {
+      color: white;
+      text-decoration: none;
+      text-align: justify;
+    }
+
+    .footer-links ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-socials {
+      flex: 1;
+      text-align: center;
+    }
+
+    .footer-socials h4 {
+      margin-bottom: 10px;
+      color: #f1c40f;
+    }
+
+    .footer-socials a {
+      color: #bbb;
+      margin: 0 10px;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    .footer-socials a:hover {
+      color: #f1c40f;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 20px;
+      border-top: 1px solid #444;
+      padding-top: 10px;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .separator {
+      border: none;
+      /* supprime la bordure par défaut */
+      height: 1px;
+      /* épaisseur de la barre */
+      background-color: #f4f8f5;
+      /* couleur de la barre */
+      margin: 20px 0;
+      /* espace au-dessus et en dessous */
+      width: 80%;
+      /* largeur de la barre */
+      margin-left: auto;
+      /* centre la barre */
+      margin-right: auto;
+      border-radius: 5px;
+      /* coins arrondis si tu veux */
+    }
+
+
+    #flag {
+      width: 0px;
+      margin-left: 39rem;
+      transform: scaleX(15);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+
+      <div class="header">
+        <img class="logo" src="télécharger.png" alt="error">
+        <h1 class="titre">INSTI<br> <small>Institut National Supérieur de Technologie Industrielle </small>
+        </h1>
+      </div>
+      <div id="liste">
+        <ul class="menu">
+          <li><a href="Accueil.html"> <strong> Accueil </strong></a></li>
+          <li><a href="Accueil.html"> <strong> Formations </strong></a></li>
+          <li><a href="Accueil.html"> <strong> Evénements et Réalisations </strong></a>
+          </li>
+          <li><a href="contacts.html"> <strong> Contacts</strong></a></li>
+          <li><a href="rsv.html"><strong>Réservation de cabines</strong></a></li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+  <div class="overlay">
+    <h1 style="color: white; text-align: center; font-size: 4rem;">Réservez votre cabine ici et maintenant !</h1>
+  </div>
+
+  <div class="container">
+    <h2>Formulaire de réservation</h2>
+
+    <form id="reservationForm">
+      <!-- Infos personnelles -->
+      <label for="name">Nom complet :</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">Téléphone :</label>
+      <input type="text" id="phone" name="phone" required>
+
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required>
+
+      <!-- Choix bâtiment -->
+      <label for="batiment">Bâtiment :</label>
+      <select id="batiment" name="batiment" required>
+        <option value="">-- Sélectionner un bâtiment --</option>
+        <option value="A">Bâtiment A</option>
+        <option value="B">Bâtiment B</option>
+        <option value="C">Bâtiment C</option>
+        <option value="D">Bâtiment D</option>
+        <option value="E">Bâtiment E</option>
+        <option value="F">Bâtiment F</option>
+        <option value="G">Bâtiment G</option>
+        <option value="H">Bâtiment H</option>
+        <option value="I">Bâtiment I</option>
+        <option value="J">Bâtiment J</option>
+        <option value="K">Bâtiment K</option>
+        <option value="L">Bâtiment L</option>
+      </select>
+
+      <!-- Choix cabine -->
+      <label for="cabine">Cabine :</label>
+      <select id="cabine" name="cabine" required>
+        <option value="">-- Sélectionner une cabine --</option>
+      </select>
+
+      <!-- Dates -->
+      <label for="dateArrivee">Date d’arrivée :</label>
+      <input type="date" id="dateArrivee" name="dateArrivee" required>
+
+      <label for="dateDepart">Date de départ :</label>
+      <input type="date" id="dateDepart" name="dateDepart" required>
+
+      <label for="personnes">Nombre de personnes :</label>
+      <input type="number" id="personnes" name="personnes" min="1" required>
+
+      <button type="submit">Réserver</button>
+    </form>
+
+    <p id="confirmation" style="color: green; font-weight: bold; text-align:center; display:none;">
+      ✅ Votre réservation a été enregistrée !
+    </p>
+  </div>
+
+  <script>
+    // Remplir automatiquement les cabines selon le bâtiment
+    document.getElementById("batiment").addEventListener("change", function () {
+      let cabineSelect = document.getElementById("cabine");
+      cabineSelect.innerHTML = "<option value=''>-- Sélectionner une cabine --</option>";
+      let batiment = this.value;
+      if (batiment) {
+        for (let i = 1; i <= 6; i++) {
+          let option = document.createElement("option");
+          option.value = batiment + i;
+          option.text = "Cabine " + batiment + i;
+          cabineSelect.add(option);
+        }
+      }
+    });
+
+    // Confirmation simple après soumission
+    document.getElementById("reservationForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("confirmation").style.display = "block";
+      this.reset();
+      document.getElementById("cabine").innerHTML = "<option value=''>-- Sélectionner une cabine --</option>";
+    });
+  </script>
+  <footer id="foot">
+    <div id="footer-container">
+
+      <img class="footer-logo" src="télécharger.png" alt="error" width="80px">
+    </div>
+    <div style="max-width:1200px; margin:auto; display:grid; grid-template-columns: 300px 300px; gap:40rem;">
+      <div>
+        <h3 style="color:white; font-size:18px; margin-bottom:15px;">Liens rapides</h3>
+        <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+          <li><a href="Accueil.html" style="color:#ddd; text-decoration:none;">Accueil</a></li>
+          <li><a href="Accueil.html" style="color:#ddd; text-decoration:none;">Formations</a>
+          </li>
+          <li><a href="Accueil.html" style="color:#ddd; text-decoration:none;">Evénements
+              et Réalisations</a></li>
+          <li><a href="Contacts.html" style="color:#ddd; text-decoration:none;"> Contacts</a></li>
+          <li><a href="rsv.html" style="color:#ddd; text-decoration:none;">Réservation de cabines</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="color:white; font-size:18px; margin-bottom:15px;">Informations</h3>
+        <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+          <li><a href="#" style="color:#ddd; text-decoration:none;">Envoyer un message</a></li>
+          <li style="color:#ddd;">Abomey, Hôtel de ville</li>
+          <li style="color:#ddd;">BP 486 Abomey, Sogbo-Aliho</li>
+          <li style="color:#ddd;">Tel: (229) 40 522 199 / 64 057 048</li>
+          <li><a href="mailto:unstim@unstim.bj" style="color:#ddd;">unstim@unstim.bj</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr style="border:0; border-top:1px solid #444; margin:30px 0;">
+
+    <!-- Bas du footer -->
+    <div style="text-align:center; font-size:14px; color:#bbb;">
+      Science et technologie au service de l'homme <br>
+      © Unstim - 2025 - Tous droits réservés <br>
+      <a href="#" style="color:#ddd; text-decoration:none;">Politique de confidentialité</a>
+    </div>
+    <div class="separator"></div>
+    <div class="footer-socials">
+      <a href="https://facebook.com/https://facebook.com/groups/449999800216990/" target="_blank"><i
+          class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com/https://www.instagram.com/p/DFmuUuON7Jf/?utm_source=ig_web_copy_link"
+        target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://wa.me/22995736112" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div>
+      <img id="flag" src="drapeau.webp" alt="error">
+    </div>
+    <p style="text-align: center;">&copy; 2025 Université de Lokossa - Tous droits réservés</p>
+  </footer>
+
+</body>
+
+</html>

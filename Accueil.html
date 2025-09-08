@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #0d2c54;
+            border: none;
+            color: white
+        }
+
+        body {
+            background-color: white
+        }
+
+        .logo {
+            margin-right: 10px;
+        }
+
+        .titre {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu {
+            text-decoration: none;
+            align-items: center;
+            list-style: none;
+            display: flex;
+            gap: 7rem;
+            margin-bottom: 10px;
+            margin-top: 10px;
+
+
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgb(13, 44, 84);
+            border-right: 4px solid #0d2c54;
+            padding: 0 20px;
+        }
+
+        nav a :hover {
+            text-decoration: underline;
+        }
+
+        #liste {
+
+            background-color: none;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: none;
+        }
+
+        .container img {
+            width: 100%;
+            display: block;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: rgba(0, 32, 64, 0.7);
+            color: white;
+            padding: 20px;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .f-title {
+            padding-left: 12px;
+            align-items: center;
+            margin-right: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+            margin-top: 50px;
+            margin-bottom: none;
+        }
+
+        h2 i {
+            margin-right: 10px;
+            color: rgba(0, 32, 64, 0.7);
+            /* bleu pour l'icône */
+        }
+
+
+        .detail {
+
+
+            gap: 3rem;
+            display: grid;
+            grid-template-columns: 380px 380px 380px;
+            grid-template-rows: 700px 700px;
+            padding: 10px;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            color: rgb(70, 69, 69);
+            line-height: 20px;
+
+
+        }
+
+        .detail :hover {
+            border-color: rgba(13, 44, 84, 0.5);
+        }
+
+        .detail article li {
+            list-style: none;
+        }
+
+        .detail article {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background-color: white;
+            padding: 10px;
+            border-color: rgba(34, 34, 34, 0.2);
+            font-size: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .detail article :hover {
+            box-shadow: 8px 4px 8px rgba(0, 0, 0, 0.1);
+            border: #376183;
+        }
+
+        .detail img {
+            width: 100%;
+
+        }
+
+        .separation {
+            width: 30px;
+            height: 0, 5rem;
+            color: black;
+        }
+
+        .middle {
+            width: 15px;
+            height: 0, 5rem;
+            color: 5px solid rgb(0, 32, 64);
+        }
+
+        .carousel {
+            position: relative;
+            width: 70rem;
+            height: 40rem;
+            overflow: hidden;
+            margin-bottom: 4rem;
+        }
+
+        /* Chaque diapo superposée */
+        .carousel-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .carousel-item.active {
+            opacity: 1;
+        }
+
+        /* Image responsive */
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+
+        }
+
+
+        .infosrealisations {
+
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            border: none;
+            margin-top: -50rem;
+        }
+
+        .infosrealisations:hover {
+            background-color: #45a049;
+        }
+
+
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 50px 0;
+            background-color: rgba(13, 44, 84, 1);
+        }
+
+        .stat-card {
+            background-color: #f2f2f2;
+            width: 180px;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: scale(1.05);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .label {
+            font-size: 16px;
+            color: #555;
+        }
+
+
+
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 40px 20px 10px;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .footer-logo {
+            flex: 1;
+            text-align: center;
+            margin-left: 38rem;
+            position: relative;
+        }
+
+        .footer-logo img {
+            width: 80px;
+            margin-bottom: 10px;
+
+        }
+
+        .footer-links {
+            flex: 1;
+            text-align: center;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 10px;
+            color: #f1c40f;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin: 5px 0;
+
+        }
+
+        .footer-links ul li a {
+            color: white;
+            text-decoration: none;
+            text-align: justify;
+        }
+
+        .footer-links ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-socials {
+            flex: 1;
+            text-align: center;
+        }
+
+        .footer-socials h4 {
+            margin-bottom: 10px;
+            color: #f1c40f;
+        }
+
+        .footer-socials a {
+            color: #bbb;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: #f1c40f;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .separator {
+            border: none;
+            /* supprime la bordure par défaut */
+            height: 1px;
+            /* épaisseur de la barre */
+            background-color: #f4f8f5;
+            /* couleur de la barre */
+            margin: 20px 0;
+            /* espace au-dessus et en dessous */
+            width: 80%;
+            /* largeur de la barre */
+            margin-left: auto;
+            /* centre la barre */
+            margin-right: auto;
+            border-radius: 5px;
+            /* coins arrondis si tu veux */
+        }
+
+
+        #flag {
+            width: 0px;
+            margin-left: 39rem;
+            transform: scaleX(15);
+        }
+
+        .button {
+            margin-left: 8rem;
+            margin-top: 12px;
+            background-color: #f8c455;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            color: #054070;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <header>
+            <div class="header">
+                <img class="logo" src="télécharger.png" alt="error">
+                <h1 class="titre">INSTI<br> <small>Institut National Supérieur de Technologie Industrielle </small>
+                </h1>
+            </div>
+            <div id="liste">
+                <ul class="menu">
+                    <li><a href="Accueil.html"> <strong> Accueil </strong></a></li>
+                    <li><a href="#formation"> <strong> Formations </strong></a></li>
+                    <li><a href="#e&r"> <strong> Evénements et Réalisations </strong></a>
+                    </li>
+                    <li><a href="contacts.html"> <strong> Contacts</strong></a></li>
+                    <li><a href="rsv.html"><strong>Réservation de cabines</strong></a></li>
+                </ul>
+            </div>
+        </header>
+    </nav>
+    <main>
+        <section>
+            <div class="container">
+                <img src="entrée.jpg" alt="error" width="100%">
+                <div class="overlay">
+                    <p>L'Institut National Supérieur de Technologie Indutsrielle (INSTI) est une référence dans la
+                        formation Technique et professionnelle au Bénin. Nous offrons des programmes de qualité en Génie
+                        Civil, Informatique et bien plus.</p>
+                </div>
+
+            </div>
+        </section>
+        <section>
+            <h2><i class="fas fa-chart-bar"></i>STATISTIQUES DE L'UNIVERSITÉ</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="icon"><i class="fas fa-user-graduate" style="color: #4CAF50;"></i></div>
+                    <div class="number" data-target="12500">0</div>
+                    <div class="label">Étudiants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon"><i class="fas fa-chalkboard-teacher" style="color: #5b9fd6;"></i></div>
+                    <div class="number" data-target="850">0</div>
+                    <div class="label">Enseignants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon"><i class="fas fa-school" style="color: #db9c4a;"></i></div>
+                    <div class="number" data-target="15">0</div>
+                    <div class="label">Départements</div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon"><i class="fas fa-check-circle" style="color: #ce4c2b;"></i></div>
+                    <div class="number" data-target="92">0</div>
+                    <div class="label">Taux de réussite (%)</div>
+                </div>
+            </div>
+
+
+        </section>
+        <section id="formation">
+            <div class="f-title">
+                <h2><i class="fas fa-graduation-cap"></i>NOS OFFRES DE FORMATION</h2>
+            </div>
+            <div class="detail">
+                <div>
+                    <article>
+                        <img src="800_5e31ed20f3942.webp" alt="error" width="380px">
+                        <p>
+                        <h3>Licence professionnelle en Génie Civil</h3> <br><br>
+                        Options : Bâtiments et Travaux Publics (LP-BTP) <br>
+                        Admission: BAC C, D, E, F4 ; DT/BTP <br>
+                        Profils de sortie: <br>
+                        <details>
+                            <summary><strong style="color: rgb(89, 89, 204);"> En savoir plus </strong></summary>
+                            <ul>
+                                <li>Technicien d’étude en entreprise</li>
+                                <li>Chef Service d’entreprise des TP</li>
+                                <li>Conducteur des travaux du Génie Civil</li>
+                                <li>Contrôleurs de chantiers</li>
+                                <li>Techniciens d’essais dans les laboratoires géotechniques</li>
+                                <li>Assistant des experts géomètres</li>
+                                <li>Assistant dans les cabinets d’architecture, les agences immobilières etc.</li>
+                            </ul>
+                        </details>
+
+                        <button id="myButton" class="button"> <strong>S'inscrire</strong> </button>
+                        </p>
+                    </article>
+                </div>
+                <div>
+                    <article>
+                        <img src="GEI.jpg" alt="error" width="400px">
+                        <p>
+                        <h3>Licence professionnelle en Génie Electrique et Informatique</h3><br>
+
+
+                        Options : Electrotechnique et Electronique (LP-EE) et Informatique et Télécoms (LP-IT) <br>
+                        Admission: BAC C, D, E, F4; DT/BTP <br>
+                        Profils de sortie: <br>
+
+                        <details>
+                            <summary><strong style="color: rgb(89, 89, 204);"> En savoir plus </strong></summary>
+                            <ul>
+                                <li>Assistant de labo électrotechnique</li>
+                                <li>Chargé de la réalisation et de l’exploitation de la commande des systèmes
+                                    électriques ;
+                                </li>
+                                <li>Exploitant de réseaux et systèmes informatiques et électroniques</li>
+                                <li>Contrôleur des systèmes automatisés et des réseaux associés</li>
+                                <li>Responsable de projet e-commerce</li>
+                                <li>Développeur d'applications web et mobiles</li>
+                            </ul>
+                        </details>
+                        <button id="myButton" class="button"> <strong>S'inscrire</strong> </button>
+                        </p>
+                    </article>
+                </div>
+                <div>
+                    <article>
+                        <img src="BTS-MS-option-A-1.jpg" alt="error" width="400px">
+                        <p>
+                        <h3>Licence professionnelle en Maintenance des systèmes </h3><br>
+
+
+                        Options : Maintenance Automobile (LP-MA) et Maintenance des Systèmes Industriels (LP-MSI) <br>
+                        Admission: BAC C, D, E, F1, F2 et F3 <br>
+                        Profils de sortie: <br>
+
+
+                        <details>
+                            <summary><strong style="color: rgb(89, 89, 204);"> En savoir plus </strong></summary>
+                            <ul>
+                                <li>Chargé de maintenance d’une unité de production ou d’un parc automobile</li>
+                                <li>Gestionnaire d’un atelier de maintenance de véhicules</li>
+                                <li>Gestionnaire de magasin de stockage des pièces de rechange des parcs de machines
+                                </li>
+                                <li>Organisateur et Gestionnaire de la maintenance assistée à l’ordinateur</li>
+                                <li>Contrôleur des systèmes et commande électroniques</li>
+                                <li>Gestionnaires de parc d’engins agricoles/de manutention.</li>
+                            </ul>
+                        </details>
+                        <button id="myButton" class="button"> <strong>S'inscrire </strong></button>
+                        </p>
+                    </article>
+                </div>
+                <div>
+                    <article>
+                        <img src="energies-renouvelables.jpg" alt="error" width="400px" height="265px">
+                        <p>
+                        <h3>Licence Professionnelle en Génie Energétique</h3><br>
+
+
+                        Options : Energies Renouvelables (LP-ER) et Energétique (LP-E) <br>
+                        Admission: BAC C, D, E, F1 <br>
+                        Profils de sortie: <br>
+
+
+                        <details>
+                            <summary><strong style="color: rgb(89, 89, 204);"> En savoir plus </strong></summary>
+                            <ul>
+                                <li>Technicien en dimensionnement et montage de systèmes énergétiques</li>
+                                <li>Gestionnaire de la consommation énergétique des unités industrielles/ bâtiments</li>
+                                <li>Technicien de l’organisation de la maintenance des équipements énergétiques</li>
+                                <li>Opérateur des actions de maintenance préventive et curative sur les moyens et outils
+                                    de
+                                    production, de transport et de distribution de l’énergie.</li>
+                            </ul>
+                        </details><br>
+                        <button id="myButton" class="button"> <strong> S'inscrire</strong> </button>
+                        </p>
+                    </article>
+                </div>
+                <div>
+                    <article>
+                        <img src="GMP.jpg" alt="error" width="440px">
+
+                        <h3>Licence Professionnelle en Génie Mécanique et productique</h3><br>
+                        <p>
+                            Options : Génie Industriel (LP-GI) <br>
+                            Admission: BAC C, D, E, F1; DT/MA-FM <br>
+                            Profils de sortie: <br>
+
+                        <details>
+                            <summary><strong style="color: rgb(89, 89, 204);"> En savoir plus </strong></summary>
+                            <ul>
+                                <li>Chargé de l’organisation de la maintenance des équipements mécaniques;</li>
+                                <li>Chargé d’opérer des actions de production des pièces de rechange de machines dans
+                                    diverses
+                                    industries;</li>
+                                <li>Gestionnaire d’un atelier de fabrication mécanique et de maintenance.</li>
+                            </ul>
+                        </details><br>
+                        <button id="myButton" class="button"><strong> S'inscrire </strong></button>
+                        </p>
+                    </article>
+                </div>
+                <div>
+                    <article>
+                        <img src="genieelectrique-1.jpg" alt="error" width="400px">
+                        <p>
+                        <h3>Licence Professionnelle en Génie Electrique</h3><br>
+
+                        Options : Electrotechnique, Electronique, automatisme & Contrôle <br>
+                        Admission: BAC C, D, E, F4; DT/MA-FM <br>
+                        Profils de sortie: <br>
+
+                        <details>
+                            <summary><strong style="color: rgb(89, 89, 204);"> En savoir plus </strong></summary>
+                            <ul>
+                                <li>Technicien supérieur et ingénieur junior d'électricité</li>
+                                <li>Chargé de maintenance et exploiation des insallations électriques</li>
+                                <li>Concepteur de circuits électriques et électroniques</li>
+                                <li>Spécialiste en énergie renouvelable ou automatisation industrielles</li>
+                                <li>Analyste des systèmes de contrôle et instrumentation</li>
+                            </ul>
+                        </details><br>
+                        <button id="myButton" class="button"> <strong>S'inscrire </strong></button>
+                        </p>
+                    </article>
+                </div>
+            </div>
+
+        </section>
+        <section id="e&r">
+            <h2><i class="fas fa-trophy"></i>ÉVÉNEMENTS ET RÉALISATIONS</h2><br><br>
+            <div class="carousel">
+                <div class="carousel-item active">
+                    <a
+                        href="https://www.gouv.bj/article/1687/celebration-20-annees-existence-insti-lokossa-organise-premieres-journees-scientifiques/">
+                        <img src="20ans.jpeg" alt="error" width="100%"> </a>
+                </div>
+                <div class="carousel-item"><a
+                        href="https://www.facebook.com/100076209937678/posts/pfbid0v6MWiDgLnGk45K5YBQzATjN2d19DnogjfV3rxsDe13m6UaLmLJraFH2aVzpVui8Fl/">
+                        <img src="gaz2.jpg" alt="error" width="100%"> </a></div>
+                <div class="carousel-item"> <a href="https://insti.edu.bj/"> <img src="actpeda (8).jpg" alt="error"
+                            width="100%"> </a></div>
+                <div class="carousel-item"><a href="https://www.facebook.com/Gazettedutechnoinsti"> <img src="gaz3.jpg"
+                            alt="error" width="100%"> </a></div>
+                <div class="carousel-item"><a href="https://www.facebook.com/share/p/1F5WzRuYbU/"> <img
+                            src="unstiminsti.jpg" alt="error" width="100%"> </a></div>
+                <div class="carousel-item"> <a href="https://insti.edu.bj/"> <img src="actpeda (20).jpg" alt="error"
+                            width="100%"> </a></div>
+                <div class="carousel-item"><a href="https://insti.edu.bj/"> <img src="actpeda (21).jpg" alt="error"
+                            width="100%"> </a></div>
+            </div>
+        </section>
+    </main>
+    <footer id="foot">
+        <div id="footer-container">
+
+            <img class="footer-logo" src="télécharger.png" alt="error" width="80px">
+        </div>
+        <div style="max-width:1200px; margin:auto; display:grid; grid-template-columns: 300px 300px; gap:40rem;">
+            <div>
+                <h3 style="color:white; font-size:18px; margin-bottom:15px;">Liens rapides</h3>
+                <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+                    <li><a href="Accueil.html" style="color:#ddd; text-decoration:none;">Accueil</a></li>
+                    <li><a href="#formation" style="color:#ddd; text-decoration:none;">Formations</a>
+                    </li>
+                    <li><a href="#e&r" style="color:#ddd; text-decoration:none;">Evénements
+                            et Réalisations</a></li>
+                    <li><a href="contacts.html" style="color:#ddd; text-decoration:none;"> Contacts</a></li>
+                    <li><a href="rsv.html" style="color:#ddd; text-decoration:none;">Réservation de cabines</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="color:white; font-size:18px; margin-bottom:15px;">Informations</h3>
+                <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+                    <li><a href="#" style="color:#ddd; text-decoration:none;">Envoyer un message</a></li>
+                    <li style="color:#ddd;">Abomey, Hôtel de ville</li>
+                    <li style="color:#ddd;">BP 486 Abomey, Sogbo-Aliho</li>
+                    <li style="color:#ddd;">Tel: (229) 40 522 199 / 64 057 048</li>
+                    <li><a href="mailto:unstim@unstim.bj" style="color:#ddd;">unstim@unstim.bj</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr style="border:0; border-top:1px solid #444; margin:30px 0;">
+
+        <!-- Bas du footer -->
+        <div style="text-align:center; font-size:14px; color:#bbb;">
+            Science et technologie au service de l'homme <br>
+            © Unstim - 2025 - Tous droits réservés <br>
+            <a href="#" style="color:#ddd; text-decoration:none;">Politique de confidentialité</a>
+        </div>
+        <div class="separator"></div>
+        <div class="footer-socials">
+            <a href="https://facebook.com/https://facebook.com/groups/449999800216990/" target="_blank"><i
+                    class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/https://www.instagram.com/p/DFmuUuON7Jf/?utm_source=ig_web_copy_link"
+                target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/22995736112" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div>
+            <img id="flag" src="drapeau.webp" alt="error">
+        </div>
+        <p style="text-align: center;">&copy; 2025 Université de Lokossa - Tous droits réservés</p>
+    </footer>
+    <script src="accueil.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!doctype html>
+    <html lang="fr">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Envoyer un message</title>
+        <!-- Font Awesome CDN (v6) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-somehash" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            :root {
+                --bg: #0f1724;
+                /* deep slate */
+                --card: #0b1220;
+                --accent: #06b6d4;
+                /* teal-ish */
+                --muted: #9aa4b2;
+                --radius: 12px;
+            }
+
+            * {
+                box-sizing: border-box
+            }
+
+            .container {
+                width: 100%;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+                border-radius: none;
+                box-shadow: 0 10px 30px rgba(2, 6, 23, 0.7);
+                display: grid;
+                grid-template-columns: 1fr 420px;
+                gap: 0;
+                overflow: hidden;
+                margin: 0;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+                background: linear-gradient(180deg, var(--bg), #0d2c54 60%);
+                color: #e6eef6;
+                padding: 24px;
+            }
+
+            .left {
+                padding: 28px 32px;
+            }
+
+            .right {
+                background: linear-gradient(180deg, rgba(6, 11, 23, 0.6), rgba(4, 9, 18, 0.9));
+                padding: 24px;
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h1 {
+                margin: 0 0 8px;
+                font-size: 20px
+            }
+
+            p.lead {
+                margin: 0 0 18px;
+                color: var(--muted)
+            }
+
+            /* Form styles */
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 14px
+            }
+
+            .field {
+                position: relative;
+            }
+
+            .field input,
+            .field textarea {
+                width: 100%;
+                padding: 12px 12px 12px 40px;
+                border-radius: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.06);
+                background: transparent;
+                color: inherit;
+                font-size: 14px;
+                outline: none;
+                transition: box-shadow .15s, border-color .15s, transform .08s;
+            }
+
+            .field input:focus,
+            .field textarea:focus {
+                box-shadow: 0 6px 20px rgba(6, 182, 212, 0.08);
+                border-color: var(--accent)
+            }
+
+            .field i {
+                position: absolute;
+                left: 12px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 14px;
+                color: var(--muted)
+            }
+
+            textarea {
+                min-height: 120px;
+                resize: vertical
+            }
+
+            .row {
+                display: flex;
+                gap: 12px
+            }
+
+            .row .field {
+                flex: 1
+            }
+
+            .controls {
+                display: flex;
+                align-items: center;
+                gap: 12px
+            }
+
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 14px;
+                border-radius: 10px;
+                border: none;
+                cursor: pointer;
+                font-weight: 600;
+                background: linear-gradient(90deg, var(--accent), #0891b2);
+                color: #032024;
+                box-shadow: 0 8px 18px rgba(6, 182, 212, 0.12);
+                transition: transform .08s, box-shadow .12s;
+            }
+
+            .btn:active {
+                transform: translateY(1px)
+            }
+
+            .btn.secondary {
+                background: transparent;
+                color: var(--muted);
+                border: 1px solid rgba(255, 255, 255, 0.04);
+                box-shadow: none
+            }
+
+            /* small helper text */
+            .help {
+                font-size: 13px;
+                color: var(--muted)
+            }
+
+            /* right column - preview */
+            .preview-card {
+                width: 100%;
+                max-width: 360px;
+                border-radius: 10px;
+                padding: 18px;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02)
+            }
+
+            .avatar {
+                width: 64px;
+                height: 64px;
+                border-radius: 12px;
+                background: linear-gradient(180deg, #0ea5a4, #036b6b);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 26px
+            }
+
+            .meta {
+                display: flex;
+                gap: 12px;
+                align-items: center
+            }
+
+            .meta h3 {
+                margin: 0;
+                font-size: 16px
+            }
+
+            .meta p {
+                margin: 0;
+                color: var(--muted);
+                font-size: 13px
+            }
+
+            .sent {
+                display: none;
+                padding: 16px;
+                border-radius: 8px;
+                background: linear-gradient(90deg, rgba(6, 182, 212, 0.08), rgba(6, 182, 212, 0.04));
+                color: var(--accent);
+                font-weight: 600
+            }
+
+            .sent.show {
+                display: block
+            }
+
+            /* responsive */
+            @media (max-width:880px) {
+                .container {
+                    grid-template-columns: 1fr;
+                }
+
+                .right {
+                    order: -1
+                }
+            }
+
+
+            footer {
+                background: #222;
+                color: #fff;
+                padding: 40px 20px 10px;
+                font-family: Arial, sans-serif;
+            }
+
+            .footer-container {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                max-width: 1100px;
+                margin: auto;
+            }
+
+            .footer-logo {
+                flex: 1;
+                text-align: center;
+                margin-left: 38rem;
+            }
+
+            .footer-logo img {
+                width: 80px;
+                margin-bottom: 10px;
+
+            }
+
+            .footer-links {
+                flex: 1;
+                text-align: center;
+                list-style: none;
+                text-decoration: none;
+            }
+
+            .footer-links h4 {
+                margin-bottom: 10px;
+                color: #f1c40f;
+            }
+
+            .footer-links ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .footer-links ul li {
+                margin: 5px 0;
+
+            }
+
+            .footer-links ul li a {
+                color: white;
+                text-decoration: none;
+                text-align: justify;
+            }
+
+            .footer-links ul li a:hover {
+                color: #fff;
+            }
+
+            .footer-socials {
+                flex: 1;
+                text-align: center;
+            }
+
+            .footer-socials h4 {
+                margin-bottom: 10px;
+                color: #f1c40f;
+            }
+
+            .footer-socials a {
+                color: #bbb;
+                margin: 0 10px;
+                font-size: 20px;
+                transition: color 0.3s;
+            }
+
+            .footer-socials a:hover {
+                color: #f1c40f;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                margin-top: 20px;
+                border-top: 1px solid #444;
+                padding-top: 10px;
+                font-size: 14px;
+                color: #aaa;
+            }
+
+            .separator {
+                border: none;
+                /* supprime la bordure par défaut */
+                height: 1px;
+                /* épaisseur de la barre */
+                background-color: #f4f8f5;
+                /* couleur de la barre */
+                margin: 20px 0;
+                /* espace au-dessus et en dessous */
+                width: 80%;
+                /* largeur de la barre */
+                margin-left: auto;
+                /* centre la barre */
+                margin-right: auto;
+                border-radius: 5px;
+                /* coins arrondis si tu veux */
+            }
+
+
+            #flag {
+                width: 0px;
+                margin-left: 39rem;
+                transform: scaleX(15);
+            }
+
+            .header {
+                display: flex;
+                align-items: center;
+                background-color: #0d2c54;
+                border: none;
+                color: white
+            }
+
+            body {
+                background-color: white
+            }
+
+            .logo {
+                margin-right: 10px;
+            }
+
+            .titre {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            .menu {
+                text-decoration: none;
+                align-items: center;
+                list-style: none;
+                display: flex;
+                gap: 7rem;
+                margin-bottom: 10px;
+                margin-top: 10px;
+
+
+            }
+
+            nav a {
+                text-decoration: none;
+                color: rgb(13, 44, 84);
+                border-right: 4px solid #0d2c54;
+                padding: 0 20px;
+            }
+
+            nav a :hover {
+                text-decoration: underline;
+            }
+
+            #liste {
+
+                background-color: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!--
+    Page: Envoyer un message
+    - Utilise Font Awesome pour les icônes (lien CDN dans <head>)
+    - Fichier autonome: sauvegardez comme `contact.html` et ouvrez dans le navigateur
+    Remarque: si vous utilisez une politique CSP stricte, remplacez l'URL CDN par une installation locale de Font Awesome.
+  -->
+        <header>
+            <nav>
+
+                <div class="header">
+                    <img class="logo" src="télécharger.png" alt="error">
+                    <h1 class="titre">INSTI<br> <small>Institut National Supérieur de Technologie Industrielle </small>
+                    </h1>
+                </div>
+                <div id="liste">
+                    <ul class="menu">
+                        <li><a href="Accueil.html"> <strong> Accueil </strong></a></li>
+                        <li><a href="Accueil.html"> <strong> Formations </strong></a></li>
+                        <li><a href="Accueil.html"> <strong> Evénements et Réalisations </strong></a>
+                        </li>
+                        <li><a href="contacts.html"> <strong> Contacts</strong></a></li>
+                        <li><a href="rsv.html"><strong>Réservation de cabines</strong></a></li>
+                    </ul>
+                </div>
+
+            </nav>
+        </header>
+
+        <main class="container" role="main">
+            <section class="left">
+                <h1>Envoyer un message</h1>
+                <p class="lead">Remplissez le formulaire et cliquez sur <strong>Envoyer</strong></p>
+
+                <form id="contactForm" novalidate>
+                    <div class="row">
+                        <div class="field">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required
+                                aria-label="Votre nom" />
+                        </div>
+
+                        <div class="field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="Email" required
+                                aria-label="Email" />
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <i class="fa-solid fa-tag"></i>
+                        <input type="text" id="subject" name="subject" placeholder="Sujet (optionnel)"
+                            aria-label="Sujet" />
+                    </div>
+
+                    <div class="field">
+                        <i class="fa-solid fa-message"></i>
+                        <textarea id="message" name="message" placeholder="Votre message..." required
+                            aria-label="Votre message"></textarea>
+                    </div>
+
+                    <div class="controls">
+                        <button type="submit" class="btn" id="sendBtn"><i class="fa-solid fa-paper-plane"></i>
+                            Envoyer</button>
+                        <button type="button" class="btn secondary" id="clearBtn"><i class="fa-solid fa-trash"></i>
+                            Effacer</button>
+                        <span class="help">Les champs marqués d'un * sont obligatoires.</span>
+                    </div>
+
+                    <div id="status" class="sent" role="status" aria-live="polite">
+                        <i class="fa-solid fa-circle-check"></i> Message envoyé avec succès !
+                    </div>
+                </form>
+
+            </section>
+
+            <aside class="right">
+                <div class="preview-card">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+                        <div class="meta">
+                            <div class="avatar"><i class="fa-solid fa-paper-plane"></i></div>
+                            <div>
+                                <h3>Contact rapide</h3>
+                                <p>Envoyez-nous un message. Nous répondons sous 48h.</p>
+                            </div>
+                        </div>
+                        <div style="text-align:right;color:var(--muted);font-size:13px">Support</div>
+                    </div>
+
+                    <div style="border-radius:8px;padding:12px;border:1px dashed rgba(255,255,255,0.03);">
+                        <strong>Prévisualisation:</strong>
+                        <div id="preview" style="margin-top:10px;color:var(--muted);font-size:14px">Votre message
+                            apparaîtra ici.</div>
+                    </div>
+
+                </div>
+                <div style="margin-top:12px;color:var(--muted);font-size:13px;text-align:center">Raccourci: <i
+                        class="fa-solid fa-paperclip"></i> joindre un fichier (non implémenté)</div>
+            </aside>
+        </main>
+        <footer id="foot">
+            <div id="footer-container">
+
+                <img class="footer-logo" src="télécharger.png" alt="error" width="80px">
+            </div>
+            <div style="max-width:1200px; margin:auto; display:grid; grid-template-columns: 300px 300px; gap:40rem;">
+                <div>
+                    <h3 style="color:white; font-size:18px; margin-bottom:15px;">Liens rapides</h3>
+                    <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+                        <li><a href="Accueil.html" style="color:#ddd; text-decoration:none;">Accueil</a></li>
+                        <li><a href="Accueil.html" style="color:#ddd; text-decoration:none;">Formations</a>
+                        </li>
+                        <li><a href="Accueil.html"
+                                style="color:#ddd; text-decoration:none;">Evénements
+                                et Réalisations</a></li>
+                        <li><a href="contacts.html" style="color:#ddd; text-decoration:none;"> Contacts</a></li>
+                        <li><a href="rsv.html" style="color:#ddd; text-decoration:none;">Réservation de cabines</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color:white; font-size:18px; margin-bottom:15px;">Informations</h3>
+                    <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+                        <li><a href="#" style="color:#ddd; text-decoration:none;">Envoyer un message</a></li>
+                        <li style="color:#ddd;">Abomey, Hôtel de ville</li>
+                        <li style="color:#ddd;">BP 486 Abomey, Sogbo-Aliho</li>
+                        <li style="color:#ddd;">Tel: (229) 40 522 199 / 64 057 048</li>
+                        <li><a href="mailto:unstim@unstim.bj" style="color:#ddd;">unstim@unstim.bj</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr style="border:0; border-top:1px solid #444; margin:30px 0;">
+
+            <!-- Bas du footer -->
+            <div style="text-align:center; font-size:14px; color:#bbb;">
+                Science et technologie au service de l'homme <br>
+                © Unstim - 2025 - Tous droits réservés <br>
+                <a href="#" style="color:#ddd; text-decoration:none;">Politique de confidentialité</a>
+            </div>
+            <div class="separator"></div>
+            <div class="footer-socials">
+                <a href="https://facebook.com/https://facebook.com/groups/449999800216990/" target="_blank"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com/https://www.instagram.com/p/DFmuUuON7Jf/?utm_source=ig_web_copy_link"
+                    target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://wa.me/22995736112" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div>
+                <img id="flag" src="drapeau.webp" alt="error">
+            </div>
+            <p style="text-align: center;">&copy; 2025 Université de Lokossa - Tous droits réservés</p>
+        </footer>
+        <script>
+            const form = document.getElementById('contactForm');
+            const sendBtn = document.getElementById('sendBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const status = document.getElementById('status');
+            const preview = document.getElementById('preview');
+
+            function updatePreview() {
+                const name = document.getElementById('name').value.trim();
+                const subject = document.getElementById('subject').value.trim();
+                const msg = document.getElementById('message').value.trim();
+                let text = '';
+                if (name) text += `<strong>De:</strong> ${escapeHtml(name)}\n`;
+                if (subject) text += `<br><strong>Sujet:</strong> ${escapeHtml(subject)}\n`;
+                if (msg) text += `<br><strong>Message:</strong> ${escapeHtml(msg)}`;
+                preview.innerHTML = text || 'Votre message apparaîtra ici.';
+            }
+
+            function escapeHtml(unsafe) {
+                return unsafe.replace(/[&<>"']/g, function (m) {
+                    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": "&#039;" }[m];
+                });
+            }
+
+            form.addEventListener('input', updatePreview);
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                // validation simple
+                const name = document.getElementById('name');
+                const email = document.getElementById('email');
+                const message = document.getElementById('message');
+                if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+                    status.classList.remove('show');
+                    status.style.background = 'linear-gradient(90deg, rgba(255,90,90,0.06), rgba(255,90,90,0.03))';
+                    status.style.color = '#ffb4b4';
+                    status.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Veuillez remplir les champs obligatoires.';
+                    status.classList.add('show');
+                    return;
+                }
+
+                // bouton en état d'envoi
+                sendBtn.disabled = true;
+                sendBtn.style.opacity = 0.7;
+
+                // Simuler un envoi réseau (remplacez par fetch() réelle si vous avez un endpoint)
+                setTimeout(() => {
+                    status.style.background = 'linear-gradient(90deg, rgba(6,182,212,0.08), rgba(6,182,212,0.04))';
+                    status.style.color = 'var(--accent)';
+                    status.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message envoyé avec succès !';
+                    status.classList.add('show');
+                    sendBtn.disabled = false;
+                    sendBtn.style.opacity = 1;
+                    form.reset();
+                    updatePreview();
+                }, 800);
+            });
+
+            clearBtn.addEventListener('click', () => { form.reset(); updatePreview(); status.classList.remove('show'); });
+
+            // initial preview
+            updatePreview();
+        </script>
+
+    </body>
+
+    </html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #0d2c54;
+            border: none;
+            color: white
+        }
+
+        body {
+            background-color: white;
+            text-align: left;
+            line-height: none;
+            margin-top: none;
+
+        }
+
+        .logo {
+            margin-right: 10px;
+        }
+
+        .titre {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu {
+            text-decoration: none;
+            align-items: center;
+            list-style: none;
+            display: flex;
+            gap: 7rem;
+            margin-bottom: 10px;
+            margin-top: 10px;
+
+
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgb(13, 44, 84);
+            border-right: 4px solid #0d2c54;
+            padding: 0 20px;
+        }
+
+        nav a :hover {
+            text-decoration: underline;
+        }
+
+        #liste {
+
+            background-color: none;
+        }
+
+        .form-container {
+            width: 350px;
+            margin: 50px auto;
+            padding: 30px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+
+        }
+
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 40px 20px 10px;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .footer-logo {
+            flex: 1;
+            text-align: center;
+            margin-left: 38rem;
+        }
+
+        .footer-logo img {
+            width: 80px;
+            margin-bottom: 10px;
+
+        }
+
+        .footer-links {
+            flex: 1;
+            text-align: center;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 10px;
+            color: #f1c40f;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin: 5px 0;
+
+        }
+
+        .footer-links ul li a {
+            color: white;
+            text-decoration: none;
+            text-align: justify;
+        }
+
+        .footer-links ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-socials {
+            flex: 1;
+            text-align: center;
+        }
+
+        .footer-socials h4 {
+            margin-bottom: 10px;
+            color: #f1c40f;
+        }
+
+        .footer-socials a {
+            color: #bbb;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: #f1c40f;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            padding-top: 10px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .separator {
+            border: none;
+            /* supprime la bordure par défaut */
+            height: 1px;
+            /* épaisseur de la barre */
+            background-color: #f4f8f5;
+            /* couleur de la barre */
+            margin: 20px 0;
+            /* espace au-dessus et en dessous */
+            width: 80%;
+            /* largeur de la barre */
+            margin-left: auto;
+            /* centre la barre */
+            margin-right: auto;
+            border-radius: 5px;
+            /* coins arrondis si tu veux */
+        }
+
+
+        #flag {
+            width: 0px;
+            margin-left: 39rem;
+            transform: scaleX(15);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <header>
+            <div class="header">
+                <img class="logo" src="télécharger.png" alt="error">
+                <h1 class="titre">INSTI<br> <small>Institut National Supérieur de Technologie Industrielle </small>
+                </h1>
+            </div>
+            <div id="liste">
+                <ul class="menu">
+                    <li><a href="Accueil.html"> <strong> Accueil </strong></a></li>
+                    <li><a href="#formation"> <strong> Formations </strong></a></li>
+                    <li><a href="#e&r"> <strong> Evénements et Réalisations </strong></a>
+                    </li>
+                    <li><a href="contacts.html"> <strong> Contacts</strong></a></li>
+                    <li><a href="rsv.html"><strong>Réservation de cabines</strong></a></li>
+                </ul>
+            </div>
+        </header>
+    </nav>
+    <div class="form-container">
+        <h1 class="title"><strong>Enregistrez-vous!</strong></h1>
+        <p><small>Restez informés sur toutes nos actualités</small></p>
+        <form action="" id=" regiter"></form>
+        <div class="champ">
+            <label for="Name"> Name </label><br>
+            <input type="text" name=" Nom" placeholder="Nom" required>
+        </div>
+        <div class="champ">
+            <label for="surname"> surname</label><br>
+            <input type="surname" surname=" Prenoms" placeholder=" surname">
+        </div>
+        <div class="champ">
+            <label for="E-mail"> E-mail</label><br>
+            <input type="E-mail" placeholder=" Entrer votre E-mail">
+        </div>
+        <div class="champ">
+            <label for=" Password"> Password</label><br>
+            <input type="password" placeholder="Password" required>
+        </div>
+        <div class="champ">
+            <label for="Confirmed Password"> Confirmed Password</label><br>
+            <input type="password" placeholder=" Confirmed Password" required>
+        </div>
+        <button class="button" type="submit"><strong style="color: white;">S'inscrire </strong></button>
+    </div>
+    <footer id="foot">
+        <div id="footer-container">
+
+            <img class="footer-logo" src="télécharger.png" alt="error" width="80px">
+        </div>
+        <div style="max-width:1200px; margin:auto; display:grid; grid-template-columns: 300px 300px; gap:40rem;">
+            <div>
+                <h3 style="color:white; font-size:18px; margin-bottom:15px;">Liens rapides</h3>
+                <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+                    <li><a href="Accueil.html" style="color:#ddd; text-decoration:none;">Accueil</a></li>
+                    <li><a href="#formation" style="color:#ddd; text-decoration:none;">Formations</a>
+                    </li>
+                    <li><a href="#e&r" style="color:#ddd; text-decoration:none;">Evénements
+                            et Réalisations</a></li>
+                    <li><a href="contacts.html" style="color:#ddd; text-decoration:none;"> Contacts</a></li>
+                    <li><a href="rsv.html" style="color:#ddd; text-decoration:none;">Réservation de cabines</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="color:white; font-size:18px; margin-bottom:15px;">Informations</h3>
+                <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
+                    <li><a href="#" style="color:#ddd; text-decoration:none;">Envoyer un message</a></li>
+                    <li style="color:#ddd;">Abomey, Hôtel de ville</li>
+                    <li style="color:#ddd;">BP 486 Abomey, Sogbo-Aliho</li>
+                    <li style="color:#ddd;">Tel: (229) 40 522 199 / 64 057 048</li>
+                    <li><a href="mailto:unstim@unstim.bj" style="color:#ddd;">unstim@unstim.bj</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr style="border:0; border-top:1px solid #444; margin:30px 0;">
+
+        <!-- Bas du footer -->
+        <div style="text-align:center; font-size:14px; color:#bbb;">
+            Science et technologie au service de l'homme <br>
+            © Unstim - 2025 - Tous droits réservés <br>
+            <a href="#" style="color:#ddd; text-decoration:none;">Politique de confidentialité</a>
+        </div>
+        <div class="separator"></div>
+        <div class="footer-socials">
+            <a href="https://facebook.com/https://facebook.com/groups/449999800216990/" target="_blank"><i
+                    class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/https://www.instagram.com/p/DFmuUuON7Jf/?utm_source=ig_web_copy_link"
+                target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/22995736112" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div>
+            <img id="flag" src="drapeau.webp" alt="error">
+        </div>
+        <p style="text-align: center;">&copy; 2025 Université de Lokossa - Tous droits réservés</p>
+    </footer>
+</body>
+
+</html>
