@@ -87,24 +87,32 @@
             background-color: white}
        
 
-    .en {
-      width: 10rem;
-      
-      height: 10rem;
-      max-width: 1100px
-    }
+    .overlay {
+  position: relative;   /* nécessaire pour overlay */
+  width: 100%;          /* prend toute la largeur de l'écran */
+  height: 400px;        /* hauteur fixe que tu choisis */
+  overflow: hidden;     /* pour éviter que l'image dépasse */
+}
 
-    .overlay-text{
-      background: rgba(13, 44, 84,0.75); /* bleu transparent */
-      color: white;
-      padding: 20px 30px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      line-height: 1.6;
-      text-align: justify;
-      max-width: 90%;
-        display: block;
-    }
+.en {
+  width: 100%;          /* prend toute la largeur */
+  height: 100%;         /* prend toute la hauteur fixée */
+  object-fit: cover;    /* garde l'image proportionnelle et couvre tout */
+}
+
+.overlay-text {
+  position: absolute;   /* pour superposer le texte */
+  bottom: 0;            /* texte en bas de l'image */
+  left: 0;
+  width: 100%;          /* prend toute la largeur */
+  background: rgba(13, 44, 84, 0.75); /* bande transparente */
+  color: white;
+  padding: 20px 30px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: justify;
+}
 
         .f-title {
             padding-left: 12px;
@@ -701,6 +709,7 @@
 </body>
 
 </html>
+
 
 
 
