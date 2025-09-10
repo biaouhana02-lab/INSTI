@@ -88,18 +88,25 @@
        
 
         .overlay {
-            position: absolute;
-      bottom: 20px; /* distance depuis le bas */
-      left: 0;
-      right: 0;
-      background: rgba(13, 44, 84,0.75); 
+      position: relative;
+      width: 100%;
+      height: 250px; /* tu peux ajuster */
+      background: url("entrée.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay-text {
+      background: rgba(13, 44, 84,0.75); /* bleu transparent */
       color: white;
-      padding: 20px;
+      padding: 20px 30px;
       font-family: Arial, sans-serif;
       font-size: 14px;
       line-height: 1.6;
       text-align: justify;
-        }
+      max-width: 90%;
+    }
 
         .f-title {
             padding-left: 12px;
@@ -424,11 +431,13 @@
     <main>
         <section>
             <div class="container">
-                <img src="entrée.jpg" alt="error" width="100%">
+               
                 <div class="overlay">
+                    <div class="overlay-text"> 
                     <p>L'Institut National Supérieur de Technologie Indutsrielle (INSTI) est une référence dans la
                         formation Technique et professionnelle au Bénin. Nous offrons des programmes de qualité en Génie
                         Civil, Informatique et bien plus.</p>
+                    </div>
                 </div>
 
             </div>
@@ -696,6 +705,7 @@
 </body>
 
 </html>
+
 
 
 
