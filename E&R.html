@@ -36,54 +36,72 @@
         }
 
         .header {
-            display: flex;
-            align-items: center;
-            background-color: #0d2c54;
-            border: none;
-            color: white
-        }
-
-        body {
-            background-color: white
-        }
-
-        .logo {
-            margin-right: 10px;
-        }
-
-        .titre {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .menu {
-            text-decoration: none;
-            align-items: center;
-            list-style: none;
-            display: flex;
-            gap: 7rem;
-            margin-bottom: 10px;
-            margin-top: 10px;
-
-
-        }
-
-        nav a {
-            text-decoration: none;
-            color: rgb(13, 44, 84);
-            border-right: 4px solid #0d2c54;
-            padding: 0 20px;
-        }
-
-        nav a :hover {
-            text-decoration: underline;
-        }
-
-        #liste {
-
-            background-color: none;
-        }
-
+                            display: flex;
+                            align-items: center;
+                            background-color: #0d2c54;
+                            border: none;
+                            color: white
+                        }
+            
+                        .logo {
+                            margin-right: 10px;
+                        }
+            
+                        .titre {
+                            font-size: 24px;
+                            font-weight: bold;
+                        }
+            
+                        
+                       /* --- Style global menu --- */
+            .menu {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px 0;
+                padding: 0;
+            }
+            
+            /* --- Style des liens --- */
+            .menu li a {
+                text-decoration: none;
+                color: rgb(13, 44, 84);
+                padding: 0 20px;
+                border-right: 2px solid #0d2c54; /* barre entre les liens */
+                font-weight: 600;
+                font-size: 14px;
+            }
+            
+            /* --- Pas de barre après le dernier lien --- */
+            .menu li:last-child a {
+                border-right: none;
+            }
+            
+            /* --- Effet hover --- */
+            .menu li a:hover {
+                text-decoration: underline;
+            }
+            
+            /* --- Responsive : menu vertical sur petit écran --- */
+            @media (max-width: 768px) {
+                .menu {
+                    flex-direction: column;
+                    align-items: stretch;
+                }
+            
+                .menu li a {
+                    border-right: none;              /* plus de barre verticale */
+                    border-bottom: 2px solid #0d2c54; /* barre horizontale */
+                    display: block;
+                    text-align: center;
+                    padding: 12px 0;
+                }
+            
+                .menu li:last-child a {
+                    border-bottom: none;
+                }
+            }
         .overlay {
             background-image: url(spacejoy-IH7wPsjwomc-unsplash.jpg);
             background-position: center;
@@ -290,5 +308,6 @@
 
 
 </body>
+
 
 </html>
