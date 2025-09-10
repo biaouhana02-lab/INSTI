@@ -275,118 +275,95 @@
         }
 
 
-
-        footer {
-            background: #222;
-            color: #fff;
-            padding: 40px 20px 10px;
-            font-family: Arial, sans-serif;
-            flex-wrap: wrap;           /* permet de passer en colonne si pas de place */
-            flex: 1 1 250px; 
+        
+               footer {
+          background: #222;
+          color: #fff;
+          padding: 40px 20px 10px;
+          font-family: Arial, sans-serif;
         }
-
+        
         .footer-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            max-width: 1100px;
-            margin: auto;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;          /* permet le passage en colonne */
+          max-width: 1100px;
+          margin: auto;
+          gap: 20px;                /* espace entre les blocs */
         }
-
-        .footer-logo {
-            flex: 1;
-            text-align: center;
-            margin-left: 38rem;
-            position: relative;
-        }
-
-        .footer-logo img {
-            width: 80px;
-            margin-bottom: 10px;
-
-        }
-
-        .footer-links {
-            flex: 1;
-            text-align: center;
-            list-style: none;
-            text-decoration: none;
-        }
-
-        .footer-links h4 {
-            margin-bottom: 10px;
-            color: #f1c40f;
-        }
-
-        .footer-links ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links ul li {
-            margin: 5px 0;
-
-        }
-
-        .footer-links ul li a {
-            color: white;
-            text-decoration: none;
-            text-align: justify;
-        }
-
-        .footer-links ul li a:hover {
-            color: #fff;
-        }
-
+        
+        /* chaque section prend min 250px sinon s’adapte */
+        .footer-logo,
+        .footer-links,
         .footer-socials {
-            flex: 1;
-            text-align: center;
+          flex: 1 1 250px;
+          text-align: center;
         }
-
+        
+        .footer-logo img {
+          width: 80px;
+          margin-bottom: 10px;
+        }
+        
+        /* liens */
+        .footer-links h4 {
+          margin-bottom: 10px;
+          color: #f1c40f;
+        }
+        
+        .footer-links ul {
+          list-style: none;
+          padding: 0;
+        }
+        
+        .footer-links ul li {
+          margin: 5px 0;
+        }
+        
+        .footer-links ul li a {
+          color: white;
+          text-decoration: none;
+        }
+        
+        .footer-links ul li a:hover {
+          color: #f1c40f;
+        }
+        
+        /* réseaux sociaux */
         .footer-socials h4 {
-            margin-bottom: 10px;
-            color: #f1c40f;
+          margin-bottom: 10px;
+          color: #f1c40f;
         }
-
+        
         .footer-socials a {
-            color: #bbb;
-            margin: 0 10px;
-            font-size: 20px;
-            transition: color 0.3s;
+          color: #bbb;
+          margin: 0 10px;
+          font-size: 20px;
+          transition: color 0.3s;
         }
-
+        
         .footer-socials a:hover {
-            color: #f1c40f;
+          color: #f1c40f;
         }
-
+        
+        /* bas du footer */
         .footer-bottom {
-            text-align: center;
-            margin-top: 20px;
-            border-top: 1px solid #444;
-            padding-top: 10px;
-            font-size: 14px;
-            color: #aaa;
+          text-align: center;
+          margin-top: 20px;
+          border-top: 1px solid #444;
+          padding-top: 10px;
+          font-size: 14px;
+          color: #aaa;
         }
-
+        
         .separator {
-            border: none;
-            /* supprime la bordure par défaut */
-            height: 1px;
-            /* épaisseur de la barre */
-            background-color: #f4f8f5;
-            /* couleur de la barre */
-            margin: 20px 0;
-            /* espace au-dessus et en dessous */
-            width: 80%;
-            /* largeur de la barre */
-            margin-left: auto;
-            /* centre la barre */
-            margin-right: auto;
-            border-radius: 5px;
-            /* coins arrondis si tu veux */
+          border: none;
+          height: 1px;
+          background-color: #f4f8f5;
+          margin: 20px auto;
+          width: 80%;
+          border-radius: 5px;
         }
-
-
         #flag {
             width: 0px;
             margin-left: 39rem;
@@ -708,6 +685,7 @@
 </body>
 
 </html>
+
 
 
 
