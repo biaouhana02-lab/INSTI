@@ -357,33 +357,56 @@
             }
 
             
-            @media (max-width: 768px) {
+           /* --- Style global menu --- */
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    padding: 0;
+}
+
+/* --- Style des liens --- */
+.menu li a {
+    text-decoration: none;
+    color: rgb(13, 44, 84);
+    padding: 0 20px;
+    border-right: 2px solid #0d2c54; /* barre entre les liens */
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* --- Pas de barre après le dernier lien --- */
+.menu li:last-child a {
+    border-right: none;
+}
+
+/* --- Effet hover --- */
+.menu li a:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsive : menu vertical sur petit écran --- */
+@media (max-width: 768px) {
     .menu {
         flex-direction: column;
-        gap: 0;           /* on utilise la bordure pour espacer */
-        align-items: center;
+        align-items: stretch;
     }
 
-    nav a {
-        border-right: none;
-        border-bottom: 2px solid #0d2c54;  /* barre entre les options verticales */
-        padding: 10px 0;
-        width: 100%;       /* pour que la barre fasse toute la largeur */
+    .menu li a {
+        border-right: none;              /* plus de barre verticale */
+        border-bottom: 2px solid #0d2c54; /* barre horizontale */
+        display: block;
         text-align: center;
+        padding: 12px 0;
     }
 
-    nav a:last-child {
-        border-bottom: none;  /* pas de barre après le dernier élément */
-    }
-    nav a:hover {
-    text-decoration: underline;
+    .menu li:last-child a {
+        border-bottom: none;
     }
 }
 
-            #liste {
-
-                background-color: none;
-            }
         </style>
     </head>
 
@@ -600,6 +623,7 @@
 
 
     </html>
+
 
 
 
