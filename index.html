@@ -276,98 +276,102 @@
 
 
         
-               footer {
-          background: #222;
-          color: #fff;
-          padding: 40px 20px 10px;
+                .footer {
+          background: #1c1c1c;
+          color: #ddd;
+          padding: 40px 20px 20px;
           font-family: Arial, sans-serif;
         }
         
         .footer-container {
-          display: flex;
-          justify-content: space-between;
-          flex-wrap: wrap;          /* permet le passage en colonne */
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 30px;
           max-width: 1100px;
           margin: auto;
-          gap: 20px;                /* espace entre les blocs */
-        }
-        
-        /* chaque section prend min 250px sinon s’adapte */
-        .footer-logo,
-        .footer-links,
-        .footer-socials {
-          flex: 1 1 250px;
-          text-align: center;
         }
         
         .footer-logo img {
-          width: 80px;
-          margin-bottom: 10px;
+          max-width: 120px;
         }
         
-        /* liens */
-        .footer-links h4 {
-          margin-bottom: 10px;
-          color: #f1c40f;
+        .footer-section h4 {
+          color: #fff;
+          margin-bottom: 15px;
         }
         
-        .footer-links ul {
+        .footer-section ul {
           list-style: none;
           padding: 0;
         }
         
-        .footer-links ul li {
-          margin: 5px 0;
+        .footer-section ul li {
+          margin-bottom: 8px;
         }
         
-        .footer-links ul li a {
+        .footer-section ul li a {
+          text-decoration: none;
+          color: #bbb;
+          transition: 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+          color: #fff;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+          font-size: 14px;
+          color: #bbb;
+        }
+        
+        .btn-message {
+          display: inline-block;
+          margin-top: 10px;
+          padding: 8px 15px;
+          background: #007BFF;
           color: white;
           text-decoration: none;
+          border-radius: 5px;
+          font-size: 14px;
         }
         
-        .footer-links ul li a:hover {
-          color: #f1c40f;
+        .btn-message:hover {
+          background: #0056b3;
         }
         
-        /* réseaux sociaux */
-        .footer-socials h4 {
-          margin-bottom: 10px;
-          color: #f1c40f;
-        }
-        
-        .footer-socials a {
-          color: #bbb;
-          margin: 0 10px;
-          font-size: 20px;
-          transition: color 0.3s;
-        }
-        
-        .footer-socials a:hover {
-          color: #f1c40f;
-        }
-        
-        /* bas du footer */
         .footer-bottom {
           text-align: center;
-          margin-top: 20px;
-          border-top: 1px solid #444;
-          padding-top: 10px;
-          font-size: 14px;
-          color: #aaa;
+          margin-top: 30px;
+          border-top: 1px solid #333;
+          padding-top: 20px;
         }
         
-        .separator {
-          border: none;
-          height: 1px;
-          background-color: #f4f8f5;
-          margin: 20px auto;
-          width: 80%;
-          border-radius: 5px;
+        .social-icons {
+          margin-top: 15px;
         }
-        #flag {
-            width: 0px;
-            margin-left: 39rem;
-            transform: scaleX(15);
+        
+        .social-icons a {
+          color: #bbb;
+          margin: 0 10px;
+          font-size: 18px;
+          transition: 0.3s;
+        }
+        
+        .social-icons a:hover {
+          color: #fff;
+        }
+        
+        /* Responsivité */
+        @media (max-width: 768px) {
+          .footer-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+          }
+        
+          .footer-logo {
+            margin-bottom: 20px;
+          }
         }
 
         .button {
@@ -629,13 +633,12 @@
             </div>
         </section>
     </main>
-    <footer id="foot">
-        <div id="footer-container">
-
+    <footer id="foot" class="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
             <img class="footer-logo" src="télécharger.png" alt="error" width="80px">
         </div>
-        <div style="max-width:1200px; margin:auto; display:grid; grid-template-columns: 300px 300px; gap:40rem;">
-            <div>
+            <div class="footer-section">
                 <h3 style="color:white; font-size:18px; margin-bottom:15px;">Liens rapides</h3>
                 <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
                     <li><a href="Accueil.html" style="color:#ddd; text-decoration:none;">Accueil</a></li>
@@ -647,24 +650,24 @@
                     <li><a href="rsv.html" style="color:#ddd; text-decoration:none;">Réservation de cabines</a>
                     </li>
                 </ul>
-        
+            </div>
+                <div class="footer-section">
                 <h3 style="color:white; font-size:18px; margin-bottom:15px;">Informations</h3>
                 <ul style="list-style:none; padding:0; margin:0; line-height:1.8;">
-                    <li><a href="#" style="color:#ddd; text-decoration:none;">Envoyer un message</a></li>
-                    <li style="color:#ddd;">Abomey, Hôtel de ville</li>
-                    <li style="color:#ddd;">BP 486 Abomey, Sogbo-Aliho</li>
-                    <li style="color:#ddd;">Tel: (229) 40 522 199 / 64 057 048</li>
+                    <a href="#" class="btn-message">Envoyer un message</a>
+                    <p>Abomey, Hôtel de ville</p>
+                    <p>BP 486 Abomey, Sogbo-Aliho</p>
+                    <p>Tel: (229) 01 48 11 20 29</p>
                     <li><a href="mailto:unstim@unstim.bj" style="color:#ddd;">unstim@unstim.bj</a></li>
                 </ul>
-            </div>
-        </div>
+                </div>
 
         <hr style="border:0; border-top:1px solid #444; margin:30px 0;">
 
         <!-- Bas du footer -->
-        <div style="text-align:center; font-size:14px; color:#bbb;">
-            Science et technologie au service de l'homme <br>
-            © Unstim - 2025 - Tous droits réservés <br>
+        <div class="footer-bottom">
+           <p> Science et technologie au service de l'homme</p>
+           <p> © Unstim - 2025 - Tous droits réservés</p> 
             <a href="#" style="color:#ddd; text-decoration:none;">Politique de confidentialité</a>
         </div>
         <div class="separator"></div>
@@ -675,15 +678,14 @@
                 target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://wa.me/22995736112" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <div>
-            <img id="flag" src="drapeau.webp" alt="error">
-        </div>
         <p style="text-align: center;">&copy; 2025 Université de Lokossa - Tous droits réservés</p>
+    </div>
     </footer>
     <script src="accueil.js"></script>
 </body>
 
 </html>
+
 
 
 
